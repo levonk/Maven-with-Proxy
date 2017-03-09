@@ -10,7 +10,7 @@ $ docker run -it -e "PROXY_HOST=localproxy" -e "PROXY_PORT=8080" -v $HOME/.m2:/h
 To map ```mvnd``` to this add the following to ```~/.bash_profile``` or similar
 ```console
 mvnd() {
-	docker run -rm -it -v $HOME/.m2:/home/user/.m2 levonk/maven-docker:latest "$@";
+	docker run -rm -it -v $HOME/.m2:/home/user/.m2 -v $(pwd):/home/user/proj levonk/maven-docker:latest "$@";
 }
 ```
 

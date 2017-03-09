@@ -1,5 +1,5 @@
-FROM maven:3.3.9-jdk-8-alpine
-MAINTAINER Ali Riza Saral aliriza.saral@gmail.com
+FROM codenvy/alpine_jdk8
+MAINTAINER Levon Karayan (https://github.com/levonk)
 
 ADD *.sh /usr/local/bin/
 COPY settings.template.xml /usr/share/maven/ref/settings.template.xml

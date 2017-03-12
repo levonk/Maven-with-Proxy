@@ -3,10 +3,6 @@ Docker Image that support Maven's proxy configuration over environment variables
 ```console
 $ docker pull levonk/maven-docker
 ```
-Here is a sample command to start the image
-```console
-$ docker run -it -e "PROXY_HOST=localproxy" -e "PROXY_PORT=8080" -v $HOME/.m2:/home/user/.m2  levonk/maven-docker:latest bash
-```
 To map ```mvnd``` to this add the following to ```~/.bash_profile``` or similar
 ```console
 mvnd() {

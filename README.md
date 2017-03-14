@@ -8,7 +8,10 @@ internally, they can simply create a shell script for a function to use the late
 
 Iniitally, I just watned to try Maven 3.5 without polluting my envionrment.
 
-## To use maven wrapped in a docker image
+## To use Maven wrapped in a docker image
+
+First you need to make sure you have Docker installed:
+	http://docs.docker.com/engine/installation/
 
 If you just want to use it then run the command with whatever maven targets you want
 ```console

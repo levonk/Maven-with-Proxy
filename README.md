@@ -12,7 +12,7 @@ Iniitally, I just watned to try Maven 3.5 without polluting my envionrment.
 
 If you just want to use it then run the command with whatever maven targets you want
 ```console
-	docker run --rm -it -v ${HOME}/.m2:/home/user/.m2 -v $(pwd):/workdir levonk/maven:latest clean install site
+docker run --rm -it -v ${HOME}/.m2:/home/user/.m2 -v $(pwd):/workdir levonk/maven:latest clean install site
 ```
 
 To go a step further, map `mvnd` (or whatever you want) to this add the following to `~/.bash_profile` or the equivelent for your shell

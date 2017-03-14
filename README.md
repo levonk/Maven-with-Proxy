@@ -8,6 +8,9 @@ internally, they can simply create a shell script for a function to use the late
 
 Iniitally, I just watned to try Maven 3.5 without polluting my envionrment.
 
+As I looked around for a solution, I saw plenty of solutions tied to people's enviornments, suggesting that people do development in the container, or doing bash variable
+substitutions to change settings files in the container.   With this strategy, you use your existing local-repo and leverage your existing settings.xml.
+
 ## To use Maven wrapped in a docker image
 
 First you need to make sure you have Docker installed:

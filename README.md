@@ -15,7 +15,7 @@ If you just want to use it then run the command with whatever maven targets you 
 docker run --rm -it -v ${HOME}/.m2:/home/user/.m2 -v $(pwd):/workdir levonk/maven:latest clean install site
 ```
 
-To go a step further, map `mvnd` (or whatever you want) to this add the following to `~/.bash_profile` or the equivelent for your shell
+To go a step further, and save yourself a lot of typing/head-scratching, map `mvnd` (or whatever you want) to this add the following to `~/.bash_profile` or the equivelent for your shell
 ```console
 mvnd() {
 	docker run --rm -it -v ${HOME}/.m2:/home/user/.m2 -v $(pwd):/workdir levonk/maven:latest "$@";

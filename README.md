@@ -3,13 +3,15 @@ Docker image to use the Apache Maven build tool
 
 ## Why
 
-Rather than convincing people to properly set up Java and the enviornment vairables for maven, I created an image.   If a developer wants the "blessed" version to use
-internally, they can simply create a shell script for a function to use the latest docker image.   that way upgrades are taken care of for them.
-
-Iniitally, I just watned to try Maven 3.5 without polluting my envionrment.
-
-As I looked around for a solution, I saw plenty of solutions tied to people's enviornments, suggesting that people do development in the container, or doing bash variable
-substitutions to change settings files in the container.   With this strategy, you use your existing local-repo and leverage your existing settings.xml.
+  * Continuous Delivery / Continuous Integration environments can have a "blessed" package for build consistency
+  * Add this project as a submodule to keep your tooling together.
+  * Try out multiple versions of Maven without any changes including alpha or other non-release  versions.
+  * No separate downloads, M2_HOME enviornment variables, separate ubuntu repositories, etc...
+  * Large team can get their version updated uniformly from a remote dockerhub deployment by moving tags
+  * No onboarding documentation per platform, everybody gets the same documentation.
+  * Run multiple versions of Maven trivially
+  * Tool team can release new versions without the developers even being aware (besides a download)
+  * Additional scripts can be added transparently to run before or after maven without changing workflow.
 
 ## To use Maven wrapped in a docker image
 

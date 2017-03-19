@@ -40,3 +40,10 @@ mvnd package
 
 This image extends `alpine_jdk8`.   It also passes in a default parameter to show version information of Java and Maven.
 
+## Limitations
+
+You won't be able to build a project from a sub-module/directory and expect it to be able to reference the projects above.   If you had built a parent earlier and installed it
+to a local repo, it shouldn't be a problem.  However the proper strategy is always to start from the top of the project and leverage the arguments:
+```console
+mvnd -am -pl mySubModule,SeparatedByCommas install
+```

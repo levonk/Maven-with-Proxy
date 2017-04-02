@@ -20,4 +20,7 @@ VOLUME /home/user/.m2
 VOLUME /workdir
 WORKDIR /workdir
 
+## https://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/
+ENV MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+
 ENTRYPOINT ["/usr/lib/apache-maven-3.5.0-beta-1/bin/mvn", "--strict-checksums", "--show-version"]

@@ -1,0 +1,11 @@
+## Copy env_make.template to env_make and customize for your environment
+## env_make should already be in .gitignore
+
+#PORTS = -p 8080:80
+
+VOLUMES = \
+	-v $(pwd):/workdir \
+	-v ${HOME}/.m2:/home/user/.m2:
+
+#ENV = \
+#	-e SOME_KEY=SOME_VALUE

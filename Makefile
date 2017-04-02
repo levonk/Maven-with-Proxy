@@ -16,6 +16,9 @@ INSTANCE = default
 build:
 	docker build -t $(NS)/$(REPO):$(VERSION) .
 
+refresh:
+	docker pull -a $(NS)/$(REPO)
+
 push:
 	docker push $(NS)/$(REPO):$(VERSION)
 

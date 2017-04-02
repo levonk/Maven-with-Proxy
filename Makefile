@@ -36,5 +36,6 @@ rm:
 
 release: build
 	make push -e VERSION=$(VERSION)
+	docker images $(NS)/$(REPO)
 
 default: build

@@ -37,8 +37,12 @@ stop:
 rm:
 	docker rm $(NAME)-$(INSTANCE)
 
-release: build
+deploy: build
 	make push -e VERSION=$(VERSION)
+	docker images $(NS)/$(REPO)
+
+release: deploy
+	make push -e VERSION=latest
 	docker images $(NS)/$(REPO)
 
 default: build

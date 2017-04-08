@@ -1,7 +1,7 @@
 FROM codenvy/alpine_jdk8
 LABEL maintainer "Levon Karayan (https://github.com/levonk)"
 
-ENV MAVEN_VERSION=3.5.0-beta-1
+ENV MAVEN_VERSION=3.5.0
 
 USER root
 RUN cd /tmp && \
@@ -23,4 +23,4 @@ WORKDIR /workdir
 ## https://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/
 ENV MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 
-ENTRYPOINT ["/usr/lib/apache-maven-3.5.0-beta-1/bin/mvn", "--strict-checksums", "--show-version"]
+ENTRYPOINT ["/usr/lib/apache-maven-3.5.0/bin/mvn", "--threads", "1C", "--strict-checksums", "--show-version"]
